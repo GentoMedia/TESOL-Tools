@@ -1,0 +1,116 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://TitleFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://BaseFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://ButtonFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://CEFRJWord.gd" type="Script" id=4]
+[ext_resource path="res://MenuBar.gd" type="Script" id=5]
+[ext_resource path="res://Credits.tscn" type="PackedScene" id=6]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+
+[node name="CEFRJWord" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+
+[node name="MenuBar" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1264.0
+margin_bottom = 40.0
+script = ExtResource( 5 )
+
+[node name="MainMenu" type="Button" parent="VBoxContainer/MenuBar"]
+margin_right = 127.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 3 )
+text = "Main Menu"
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+margin_top = 44.0
+margin_right = 1264.0
+margin_bottom = 136.0
+custom_fonts/font = ExtResource( 1 )
+text = "CEFR-J Word Lookup"
+align = 1
+
+[node name="SearchBar" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 140.0
+margin_right = 1264.0
+margin_bottom = 180.0
+
+[node name="SearchInput" type="LineEdit" parent="VBoxContainer/SearchBar"]
+margin_right = 1177.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_colors/selection_color = Color( 0.494118, 0.713726, 1, 1 )
+custom_colors/cursor_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color_pressed = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/clear_button_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_uneditable = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/read_only = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+clear_button_enabled = true
+placeholder_text = "Search..."
+
+[node name="SearchButton" type="Button" parent="VBoxContainer/SearchBar"]
+margin_left = 1181.0
+margin_right = 1264.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 3 )
+text = "Search"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_top = 184.0
+margin_right = 1264.0
+margin_bottom = 247.0
+custom_fonts/font = ExtResource( 2 )
+text = "
+Results"
+align = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+margin_top = 251.0
+margin_right = 1264.0
+margin_bottom = 657.0
+size_flags_vertical = 3
+custom_styles/bg = SubResource( 1 )
+scroll_horizontal_enabled = false
+
+[node name="WordResults" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+margin_right = 1264.0
+size_flags_horizontal = 3
+
+[node name="Credits" parent="VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 661.0
+margin_bottom = 704.0
+
+[connection signal="pressed" from="VBoxContainer/MenuBar/MainMenu" to="VBoxContainer/MenuBar" method="_on_MainMenu_pressed"]
+[connection signal="text_entered" from="VBoxContainer/SearchBar/SearchInput" to="." method="_on_SearchButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/SearchBar/SearchButton" to="." method="_on_SearchButton_pressed"]
