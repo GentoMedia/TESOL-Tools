@@ -17,17 +17,56 @@ func _on_SearchButton_pressed(_words : String = "example"):
 	
 	var searchWords = $VBoxContainer/SearchBar/SearchInput.text.split(" ")
 	
+	var tempWords = []
 	for word in searchWords:
 		word = word.to_lower()
 		word = word.replace(".", "")
+		word = word.replace("'", "")
+
 		if regex.search(word) == null:
 			word = ""
 		else:
 			word = regex.search(word).get_string()
+		tempWords.append(word)
+	
+	searchWords = tempWords
+	tempWords = []
+	
+	for word in searchWords:
+		#Plurals & 3rd Person Present
+		if word.ends_with("s"):
+			if word.ends_with("es"):
+				if word.ends_with("ies"):
+					tempWords.append(word.rstrip("ies") + "y")
+				else:
+					tempWords.append(word.rstrip("s"))
+					tempWords.append(word.rstrip("es"))
+			else:
+				tempWords.append(word.rstrip("s"))
 		
+		#Gerund or Present Participle
+		if word.ends_with("ing"):
+			tempWords.append(word.rstrip("ing"))
+			tempWords.append(word.rstrip("ing") + "e")
 		
+		#Negative
+		if word.ends_with("nt"):
+			tempWords.append(word.rstrip("nt"))
+			tempWords.append(word.rstrip("t"))
+			
+		#Past Tense
+		if word.ends_with("d"):
+			if word.ends_with("ed"):
+				if word.ends_with("ied"):
+					tempWords.append(word.rstrip("ied") + "y")
+				else:
+					tempWords.append(word.rstrip("d"))
+					tempWords.append(word.rstrip("ed"))
 		
-		
+	searchWords.append_array(tempWords)
+	
+	
+	for word in searchWords:
 		var entries = CEFRJWordList.WordList.count(word)
 		var entryPos = 0
 		
@@ -41,4 +80,3 @@ func _on_SearchButton_pressed(_words : String = "example"):
 				newEntry.get_node("HBoxContainer/SpeechPart").text = CEFRJWordList.EntryList[entryInt][1]
 			entryPos = entryInt + 1
 			entries -= 1
-	$VBoxContainer/ScrollContainer/WordResults.add_child(credits.instance())
