@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://TitleFont.tres" type="DynamicFont" id=1]
 [ext_resource path="res://BaseFont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://ButtonFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://CEFRJWord.gd" type="Script" id=4]
 [ext_resource path="res://MenuBar.gd" type="Script" id=5]
-[ext_resource path="res://Credits.tscn" type="PackedScene" id=6]
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 1, 1, 1, 1 )
@@ -98,7 +97,7 @@ align = 1
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
 margin_top = 251.0
 margin_right = 1264.0
-margin_bottom = 657.0
+margin_bottom = 704.0
 size_flags_vertical = 3
 custom_styles/bg = SubResource( 1 )
 scroll_horizontal_enabled = false
@@ -106,10 +105,6 @@ scroll_horizontal_enabled = false
 [node name="WordResults" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
 margin_right = 1264.0
 size_flags_horizontal = 3
-
-[node name="Credits" parent="VBoxContainer" instance=ExtResource( 6 )]
-margin_top = 661.0
-margin_bottom = 704.0
 
 [connection signal="pressed" from="VBoxContainer/MenuBar/MainMenu" to="VBoxContainer/MenuBar" method="_on_MainMenu_pressed"]
 [connection signal="text_entered" from="VBoxContainer/SearchBar/SearchInput" to="." method="_on_SearchButton_pressed"]

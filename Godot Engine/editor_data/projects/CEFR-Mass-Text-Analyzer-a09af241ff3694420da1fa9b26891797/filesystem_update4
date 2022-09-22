@@ -1,5 +1,8 @@
-res://BaseFont.tres
 res://ButtonFont.tres
+res://Credits.tscn
+res://CreditsFont.tres
+res://EmptyStyle.tres
+res://MainMenu.gd
 res://MainMenu.tscn
 res://TitleFont.tres
 res://default_env.tres

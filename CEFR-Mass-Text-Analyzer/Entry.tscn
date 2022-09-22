@@ -20,15 +20,15 @@ margin_bottom = 48.0
 size_flags_horizontal = 3
 
 [node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
-margin_right = 7.0
+margin_right = 72.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.02
+size_flags_stretch_ratio = 0.2
 
 [node name="Word" type="Label" parent="HBoxContainer"]
-margin_left = 11.0
+margin_left = 76.0
 margin_top = 5.0
-margin_right = 397.0
+margin_right = 439.0
 margin_bottom = 35.0
 size_flags_horizontal = 3
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -37,9 +37,9 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
 
 [node name="CEFR" type="Label" parent="HBoxContainer"]
-margin_left = 401.0
+margin_left = 443.0
 margin_top = 5.0
-margin_right = 787.0
+margin_right = 806.0
 margin_bottom = 35.0
 size_flags_horizontal = 3
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -47,8 +47,14 @@ custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
 
+[node name="NGSL" type="Label" parent="HBoxContainer"]
+margin_left = 810.0
+margin_top = 13.0
+margin_right = 810.0
+margin_bottom = 27.0
+
 [node name="SpeechPart" type="Label" parent="HBoxContainer"]
-margin_left = 791.0
+margin_left = 814.0
 margin_top = 5.0
 margin_right = 1177.0
 margin_bottom = 35.0

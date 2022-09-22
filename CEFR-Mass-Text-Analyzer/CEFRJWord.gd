@@ -5,6 +5,7 @@ var regex = RegEx.new()
 
 onready var CEFRJWordList = get_node("/root/WordList/")
 onready var entry = preload("res://Entry.tscn")
+onready var NGSLentry = preload("res://NGSLEntry.tscn")
 onready var credits = preload("res://Credits.tscn")
 
 func _ready():
@@ -67,11 +68,19 @@ func _on_SearchButton_pressed(_words : String = "example"):
 	
 	
 	for word in searchWords:
-		var entries = CEFRJWordList.WordList.count(word)
+		var NGSLentryInt = CEFRJWordList.ngslWords.find(word, 0)
+		if NGSLentryInt >= 0:
+			var newNGSLEntry = NGSLentry.instance()
+			$VBoxContainer/ScrollContainer/WordResults.add_child(newNGSLEntry)
+			newNGSLEntry.get_node("HBoxContainer/Word").text = CEFRJWordList.NGSL[NGSLentryInt][0]
+			newNGSLEntry.get_node("HBoxContainer/List").text = CEFRJWordList.NGSL[NGSLentryInt][1]
+			newNGSLEntry.get_node("HBoxContainer/Rank").text = CEFRJWordList.NGSL[NGSLentryInt][2]
+
+		var entries = CEFRJWordList.Words.count(word)
 		var entryPos = 0
-		
+
 		while entries > 0:
-			var entryInt = CEFRJWordList.WordList.find(word, entryPos)
+			var entryInt = CEFRJWordList.Words.find(word, entryPos)
 			if entryInt >= 0:
 				var newEntry = entry.instance()
 				$VBoxContainer/ScrollContainer/WordResults.add_child(newEntry)
