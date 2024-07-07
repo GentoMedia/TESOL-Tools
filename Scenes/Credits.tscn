@@ -28,24 +28,30 @@ layout_mode = 2
 text = "Main Menu"
 
 [node name="Application" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(360, 16)
 layout_mode = 2
 size_flags_vertical = 1
 text = "
 
 Application created by Darien Sebastion Charles."
+autowrap_mode = 2
 
 [node name="CEFRJ" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(360, 16)
 layout_mode = 2
 size_flags_vertical = 1
 text = "
 
 The CEFR-J Wordlist Version 1.6. Compiled by Yukio Tono, Tokyo University of Foreign Studies. Retrieved from http://www.cefr-j.org/data/CEFRJ_wordlist_ver1.6.zip on 13/7/2022."
+autowrap_mode = 2
 
 [node name="NGSL" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(360, 16)
 layout_mode = 2
 size_flags_vertical = 0
 text = "
 
 New General Service List by Browne, C., Culligan, B., and Phillips, J. is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. Retrieved from http://www.newgeneralservicelist.org/s/NGSL-101-with-SFI.xlsx on 9/15/2022."
+autowrap_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/MenuBar/MainMenu" to="VBoxContainer/MenuBar" method="_on_MainMenu_pressed"]

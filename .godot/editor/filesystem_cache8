@@ -1,8 +1,27 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1720342414
-default_env.tres::Environment::1608917319406027398::1720342076::0::1::::<><>::
+::res://::1720350278
+AppTheme.tres::Theme::4693190522769374037::1720349809::0::1::::<><>::
+default_env.tres::Environment::1608917319406027398::1720350273::0::1::::<><>::
 icon.png::CompressedTexture2D::6791600457680923254::1720339558::1720339869::1::::<><>::
 README.md::TextFile::-1::1720339558::0::1::::<><>::
+::res://Assets/::1720349469
+::res://Assets/aileron/::1720349483
+Aileron-Black.otf::FontFile::6571666846427544881::1408528586::1720349483::1::::<><>::
+Aileron-BlackItalic.otf::FontFile::3027644556866131611::1408528640::1720349483::1::::<><>::
+Aileron-Bold.otf::FontFile::6082607671981874399::1408528584::1720349483::1::::<><>::
+Aileron-BoldItalic.otf::FontFile::6493509758426615505::1408528640::1720349483::1::::<><>::
+Aileron-Heavy.otf::FontFile::4978261909928024499::1408528586::1720349483::1::::<><>::
+Aileron-HeavyItalic.otf::FontFile::4485756682469634302::1408528640::1720349483::1::::<><>::
+Aileron-Italic.otf::FontFile::5747620062865881092::1408528638::1720349483::1::::<><>::
+Aileron-Light.otf::FontFile::2731627144940772183::1408528584::1720349483::1::::<><>::
+Aileron-LightItalic.otf::FontFile::381154066772771321::1408528638::1720349483::1::::<><>::
+Aileron-Regular.otf::FontFile::6107159445984939545::1408528584::1720349483::1::::<><>::
+Aileron-SemiBold.otf::FontFile::9076550362218298882::1408528584::1720349483::1::::<><>::
+Aileron-SemiBoldItalic.otf::FontFile::7517366803937797698::1408528640::1720349483::1::::<><>::
+Aileron-Thin.otf::FontFile::4460773460238322587::1408528584::1720349483::1::::<><>::
+Aileron-ThinItalic.otf::FontFile::8268267827380519371::1408528638::1720349483::1::::<><>::
+Aileron-UltraLight.otf::FontFile::9161824019209710792::1408528584::1720349483::1::::<><>::
+Aileron-UltraLightItalic.otf::FontFile::7388332668018977669::1408528638::1720349483::1::::<><>::
 ::res://CEFRJ_wordlist_ver1.6-Docs/::1720339869
 CEFR-J Wordlist Ver1.6.CEFR.translation::OptimizedTranslation::66547075999575669::1720339869::0::1::::<><>::
 CEFR-J Wordlist Ver1.6.csv::Translation::2683134096377858431::1720339558::1720339869::1::::<><>::
@@ -10,11 +29,11 @@ CEFR-J Wordlist Ver1.6.pos.translation::OptimizedTranslation::722614944584028016
 Reference.txt::TextFile::-1::1720339558::0::1::::<><>::
 ::res://NGSL-Docs/::1720339558
 Citation.txt::TextFile::-1::1720339558::0::1::::<><>::
-::res://Scenes/::1720342076
+::res://Scenes/::1720350273
 CEFRJWord.tscn::PackedScene::3207931344220980905::1720341666::0::1::::<><>::res://Scripts/CEFRJWord.gd<>res://Scripts/MenuBar.gd
-Credits.tscn::PackedScene::5243522487601622558::1720342076::0::1::::<><>::res://Scripts/MenuBar.gd
+Credits.tscn::PackedScene::5243522487601622558::1720342416::0::1::::<><>::res://Scripts/MenuBar.gd
 Entry.tscn::PackedScene::8313577334120631783::1720341660::0::1::::<><>::res://Scripts/Entry.gd
-MainMenu.tscn::PackedScene::6297423154948204771::1720342000::0::1::::<><>::res://Scripts/MainMenu.gd
+MainMenu.tscn::PackedScene::6297423154948204771::1720350273::0::1::::<><>::res://Scripts/MainMenu.gd
 NGSLEntry.tscn::PackedScene::2596494457501723332::1720341660::0::1::::<><>::res://Scripts/Entry.gd
 ::res://Scripts/::1720341999
 AppSettings.gd::GDScript::-1::1720339783::0::1::::<>Node<>::
