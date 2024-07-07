@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://behy3dq8jecqh"
+
+[deps]
+
+files=["res://CEFRJ_wordlist_ver1.6-Docs/CEFR-J Wordlist Ver1.6.pos.translation", "res://CEFRJ_wordlist_ver1.6-Docs/CEFR-J Wordlist Ver1.6.CEFR.translation"]
+
+source_file="res://CEFRJ_wordlist_ver1.6-Docs/CEFR-J Wordlist Ver1.6.csv"
+dest_files=["res://CEFRJ_wordlist_ver1.6-Docs/CEFR-J Wordlist Ver1.6.pos.translation", "res://CEFRJ_wordlist_ver1.6-Docs/CEFR-J Wordlist Ver1.6.CEFR.translation"]
+
+[params]
+
+compress=true
+delimiter=0

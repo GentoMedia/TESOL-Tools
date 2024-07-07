@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://blx7fpupaf0ft"]
+
+[ext_resource type="Script" path="res://Scripts/CEFRJWord.gd" id="4"]
+[ext_resource type="Script" path="res://Scripts/MenuBar.gd" id="5"]
+
+[node name="CEFRJWord" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+
+[node name="MenuBar" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+script = ExtResource("5")
+
+[node name="MainMenu" type="Button" parent="VBoxContainer/MenuBar"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "CEFR-J Word Lookup"
+
+[node name="SearchBar" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SearchInput" type="LineEdit" parent="VBoxContainer/SearchBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Search..."
+clear_button_enabled = true
+
+[node name="SearchButton" type="Button" parent="VBoxContainer/SearchBar"]
+layout_mode = 2
+text = "Search"
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "
+Results"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="WordResults" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="VBoxContainer/MenuBar/MainMenu" to="VBoxContainer/MenuBar" method="_on_MainMenu_pressed"]
+[connection signal="text_submitted" from="VBoxContainer/SearchBar/SearchInput" to="." method="_on_SearchButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/SearchBar/SearchButton" to="." method="_on_SearchButton_pressed"]

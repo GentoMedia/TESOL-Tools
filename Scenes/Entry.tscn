@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqpfn0dloqutr"]
+
+[ext_resource type="Script" path="res://Scripts/Entry.gd" id="3"]
+
+[node name="Entry" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+script = ExtResource("3")
+
+[node name="HSeparator2" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Word" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CEFR" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NGSL" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="SpeechPart" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LookupButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Lookup"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.02
+
+[connection signal="pressed" from="HBoxContainer/LookupButton" to="." method="_on_LookupButton_pressed"]

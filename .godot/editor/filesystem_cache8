@@ -1,0 +1,25 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1720341850
+default_env.tres::Environment::1608917319406027398::1720341846::0::1::::<><>::
+icon.png::CompressedTexture2D::6791600457680923254::1720339558::1720339869::1::::<><>::
+README.md::TextFile::-1::1720339558::0::1::::<><>::
+::res://CEFRJ_wordlist_ver1.6-Docs/::1720339869
+CEFR-J Wordlist Ver1.6.CEFR.translation::OptimizedTranslation::66547075999575669::1720339869::0::1::::<><>::
+CEFR-J Wordlist Ver1.6.csv::Translation::2683134096377858431::1720339558::1720339869::1::::<><>::
+CEFR-J Wordlist Ver1.6.pos.translation::OptimizedTranslation::7226149445840280163::1720339869::0::1::::<><>::
+Reference.txt::TextFile::-1::1720339558::0::1::::<><>::
+::res://NGSL-Docs/::1720339558
+Citation.txt::TextFile::-1::1720339558::0::1::::<><>::
+::res://Scenes/::1720341846
+CEFRJWord.tscn::PackedScene::3207931344220980905::1720341666::0::1::::<><>::res://Scripts/CEFRJWord.gd<>res://Scripts/MenuBar.gd
+Credits.tscn::PackedScene::5243522487601622558::1720341666::0::1::::<><>::res://Scripts/MenuBar.gd
+Entry.tscn::PackedScene::8313577334120631783::1720341660::0::1::::<><>::res://Scripts/Entry.gd
+MainMenu.tscn::PackedScene::6297423154948204771::1720341846::0::1::::<><>::res://Scripts/MainMenu.gd
+NGSLEntry.tscn::PackedScene::2596494457501723332::1720341660::0::1::::<><>::res://Scripts/Entry.gd
+::res://Scripts/::1720341669
+AppSettings.gd::GDScript::-1::1720339783::0::1::::<>Node<>::
+CEFRJWord.gd::GDScript::-1::1720339783::0::1::::<>Control<>::
+Entry.gd::GDScript::-1::1720339783::0::1::::<>VBoxContainer<>::
+MainMenu.gd::GDScript::-1::1720339783::0::1::::<>Control<>::
+MenuBar.gd::GDScript::-1::1720339783::0::1::::<>HBoxContainer<>::
+WordList.gd::GDScript::-1::1720340330::0::1::::<>Node<>::

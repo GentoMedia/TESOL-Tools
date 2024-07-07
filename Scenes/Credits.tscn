@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgyabw8acys27"]
+
+[ext_resource type="Script" path="res://Scripts/MenuBar.gd" id="2"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+
+[node name="MenuBar" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+script = ExtResource("2")
+
+[node name="MainMenu" type="Button" parent="VBoxContainer/MenuBar"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="Application" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "
+
+Application created by Darien Sebastion Charles."
+
+[node name="CEFRJ" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "
+
+The CEFR-J Wordlist Version 1.6. Compiled by Yukio Tono, Tokyo University of Foreign Studies. Retrieved from http://www.cefr-j.org/data/CEFRJ_wordlist_ver1.6.zip on 13/7/2022."
+
+[node name="NGSL" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "
+
+New General Service List by Browne, C., Culligan, B., and Phillips, J. is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. Retrieved from http://www.newgeneralservicelist.org/s/NGSL-101-with-SFI.xlsx on 9/15/2022."
+
+[connection signal="pressed" from="VBoxContainer/MenuBar/MainMenu" to="VBoxContainer/MenuBar" method="_on_MainMenu_pressed"]

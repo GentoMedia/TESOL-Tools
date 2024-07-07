@@ -1,0 +1,6 @@
+res://default_env.tres
+res://Scenes/MainMenu.tscn
+res://Scripts/MainMenu.gd
+res://Scenes/Credits.tscn
+res://Scripts/MenuBar.gd
+res://Scripts/CEFRJWord.gd
