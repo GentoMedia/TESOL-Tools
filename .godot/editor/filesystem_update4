@@ -1,6 +1,5 @@
 res://default_env.tres
-res://Scenes/MainMenu.tscn
-res://Scenes/NGSLEntry.tscn
-res://AppTheme.tres
 res://Scenes/CEFRJWord.tscn
+res://Scenes/MainMenu.tscn
 res://Scenes/Entry.tscn
+res://Scripts/CEFRJWord.gd

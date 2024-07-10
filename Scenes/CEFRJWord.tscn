@@ -35,6 +35,7 @@ text = "Main Menu"
 [node name="Title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "CEFR-J Word Lookup"
+horizontal_alignment = 1
 
 [node name="SearchBar" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -54,13 +55,37 @@ layout_mode = 2
 text = "
 Results"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="WordResults" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+[node name="NGSLWord" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 2
+bbcode_enabled = true
+selection_enabled = true
+
+[node name="CEFRJWord" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 2
+bbcode_enabled = true
+selection_enabled = true
+
+[node name="Data1" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 2
+bbcode_enabled = true
+selection_enabled = true
+
+[node name="Data2" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 2
+bbcode_enabled = true
+selection_enabled = true
 
 [connection signal="pressed" from="VBoxContainer/MenuBar/MainMenu" to="VBoxContainer/MenuBar" method="_on_MainMenu_pressed"]
 [connection signal="text_submitted" from="VBoxContainer/SearchBar/SearchInput" to="." method="_on_SearchButton_pressed"]
