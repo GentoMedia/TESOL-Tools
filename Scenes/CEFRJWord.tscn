@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://blx7fpupaf0ft"]
+[gd_scene load_steps=4 format=3 uid="uid://blx7fpupaf0ft"]
 
+[ext_resource type="FontFile" uid="uid://cc6rim0q0yeid" path="res://Assets/aileron/Aileron-Heavy.otf" id="3_digt4"]
 [ext_resource type="Script" path="res://Scripts/CEFRJWord.gd" id="4"]
 [ext_resource type="Script" path="res://Scripts/MenuBar.gd" id="5"]
 
@@ -55,36 +56,14 @@ layout_mode = 2
 text = "
 Results"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Display" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="NGSLWord" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
 focus_mode = 2
+theme_override_fonts/bold_font = ExtResource("3_digt4")
 bbcode_enabled = true
-selection_enabled = true
-
-[node name="CEFRJWord" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 2
-bbcode_enabled = true
-selection_enabled = true
-
-[node name="Data1" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 2
-bbcode_enabled = true
-selection_enabled = true
-
-[node name="Data2" type="RichTextLabel" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 2
-bbcode_enabled = true
+autowrap_mode = 0
 selection_enabled = true
 
 [connection signal="pressed" from="VBoxContainer/MenuBar/MainMenu" to="VBoxContainer/MenuBar" method="_on_MainMenu_pressed"]

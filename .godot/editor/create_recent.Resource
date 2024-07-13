@@ -1,3 +1,7 @@
+GradientTexture2D
+PortableCompressedTexture2D
+CompressedTexture2D
+PlaceholderTexture2D
 FontVariation
 FontFile
 Theme

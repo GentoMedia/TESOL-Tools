@@ -2,21 +2,18 @@ extends Control
 
 
 var regex = RegEx.new()
+var display_cache = ""
+var display_array = [""]
 
 @onready var CEFRJWordList = get_node("/root/WordList/")
 @onready var credits = preload("res://Scenes/Credits.tscn")
-@onready var NGSLWord = $VBoxContainer/HBoxContainer/NGSLWord
-@onready var CEFRJWord = $VBoxContainer/HBoxContainer/CEFRJWord
-@onready var Data1 = $VBoxContainer/HBoxContainer/Data1
-@onready var Data2 = $VBoxContainer/HBoxContainer/Data2
+@onready var Display = $VBoxContainer/Display
+
 
 func _ready():
 	$VBoxContainer/SearchBar/SearchInput.grab_focus()
-
+	Display.resized.connect(set_tab_lengths)
 func _on_SearchButton_pressed(_words : String = "example"):
-	for child in $VBoxContainer/HBoxContainer.get_children():
-		child.clear()
-	
 	regex.compile("[a-z]+")
 	
 	var searchWords = $VBoxContainer/SearchBar/SearchInput.text.split(" ")
@@ -69,23 +66,65 @@ func _on_SearchButton_pressed(_words : String = "example"):
 		
 	searchWords.append_array(tempWords)
 	
-	# *** Change this to update RichTextLabel
+# ####################### #
+# # Displaying the data # #
+# ####################### #
+	Display.clear()
+	display_cache = ""
+	display_array.clear()
+	
 	for word in searchWords:
+		
 		var NGSLentryInt = CEFRJWordList.ngslWords.find(word, 0)
 		if NGSLentryInt >= 0:
-			NGSLWord.append_text("[b]" + CEFRJWordList.NGSL[NGSLentryInt][0] + "[/b]\n")
-			Data1.append_text(CEFRJWordList.NGSL[NGSLentryInt][1] + "\n")
-			Data2.append_text(CEFRJWordList.NGSL[NGSLentryInt][2] + "\n")
-
+			set_table_row(
+				CEFRJWordList.NGSL[NGSLentryInt][0], 
+				CEFRJWordList.NGSL[NGSLentryInt][1], 
+				CEFRJWordList.NGSL[NGSLentryInt][2]
+				)
+				
+			
+		elif CEFRJWordList.Words.count(word) > 0:
+			set_table_row(word, "N/A", "N/A")
+		else:
+			continue
+			
 		var entries = CEFRJWordList.Words.count(word)
 		var entryPos = 0
-
+		
 		while entries > 0:
 			var entryInt = CEFRJWordList.Words.find(word, entryPos)
 			if entryInt >= 0:
-				CEFRJWord.append_text(CEFRJWordList.EntryList[entryInt][0] + "\n")
-				Data1.append_text(CEFRJWordList.EntryList[entryInt][2] + "\n")
-				Data2.append_text(CEFRJWordList.EntryList[entryInt][1] + "\n")
+				set_table_row("", 
+					CEFRJWordList.EntryList[entryInt][2], 
+					CEFRJWordList.EntryList[entryInt][1]
+					)
+				
 			entryPos = entryInt + 1
 			entries -= 1
+			
+		display_array.append(display_cache)
+		display_cache = ""
+	
+	set_tab_lengths()
+	
 
+func set_table_row(column_0 : String = "", column_1 : String = "", column_2 : String = ""):
+	display_cache += "[b]" + column_0 + "[/b]"
+	display_cache += "\t"
+	display_cache += column_1
+	display_cache += "\t"
+	display_cache += column_2
+	display_cache += "\n"
+
+func set_tab_lengths():
+	var tab_length_string = str(Display.size.x / 3)
+	var display_temp = "[p tab_stops=" + tab_length_string + "]"
+	
+	for entry in display_array:
+		display_temp += entry
+		display_temp += "\n[img=" + str(Display.size.x - 32) + "x1]res://Resources/line_break.tres[/img]\n\n"
+	
+	display_temp += "[/p]"
+	Display.parse_bbcode(display_temp)
+	
