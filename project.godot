@@ -14,6 +14,7 @@ config/name="TESOL-Tools"
 run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.2")
 run/low_processor_mode=true
+run/delta_smoothing=false
 config/icon="res://icon.png"
 
 [autoload]
@@ -25,6 +26,11 @@ AppSettings="*res://Scripts/AppSettings.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/energy_saving/keep_screen_on=false
+window/ios/allow_high_refresh_rate=false
+window/ios/hide_home_indicator=false
+window/ios/hide_status_bar=false
+window/ios/suppress_ui_gesture=false
 
 [gui]
 

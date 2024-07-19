@@ -2,5 +2,3 @@ res://default_env.tres
 res://Scenes/CEFRJWord.tscn
 res://AppTheme.tres
 res://Scripts/CEFRJWord.gd
-res://Scenes/MainMenu.tscn
-res://Resources/line_break.tres

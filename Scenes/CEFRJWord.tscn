@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://blx7fpupaf0ft"]
+[gd_scene load_steps=5 format=3 uid="uid://blx7fpupaf0ft"]
 
 [ext_resource type="FontFile" uid="uid://cc6rim0q0yeid" path="res://Assets/aileron/Aileron-Heavy.otf" id="3_digt4"]
+[ext_resource type="Script" path="res://Scripts/SearchInput.gd" id="3_n0n82"]
 [ext_resource type="Script" path="res://Scripts/CEFRJWord.gd" id="4"]
 [ext_resource type="Script" path="res://Scripts/MenuBar.gd" id="5"]
 
@@ -46,6 +47,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Search..."
 clear_button_enabled = true
+shortcut_keys_enabled = false
+select_all_on_focus = true
+caret_blink = true
+script = ExtResource("3_n0n82")
 
 [node name="SearchButton" type="Button" parent="VBoxContainer/SearchBar"]
 layout_mode = 2
@@ -64,8 +69,10 @@ focus_mode = 2
 theme_override_fonts/bold_font = ExtResource("3_digt4")
 bbcode_enabled = true
 autowrap_mode = 0
+context_menu_enabled = true
 selection_enabled = true
 
 [connection signal="pressed" from="VBoxContainer/MenuBar/MainMenu" to="VBoxContainer/MenuBar" method="_on_MainMenu_pressed"]
 [connection signal="text_submitted" from="VBoxContainer/SearchBar/SearchInput" to="." method="_on_SearchButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/SearchBar/SearchButton" to="." method="_on_SearchButton_pressed"]
+[connection signal="meta_clicked" from="VBoxContainer/Display" to="." method="_on_display_meta_clicked"]

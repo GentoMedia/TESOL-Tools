@@ -13,7 +13,10 @@ var display_array = [""]
 func _ready():
 	$VBoxContainer/SearchBar/SearchInput.grab_focus()
 	Display.resized.connect(set_tab_lengths)
-func _on_SearchButton_pressed(_words : String = "example"):
+	_on_SearchButton_pressed()
+
+
+func _on_SearchButton_pressed(_words : String = ""):
 	regex.compile("[a-z]+")
 	
 	var searchWords = $VBoxContainer/SearchBar/SearchInput.text.split(" ")
@@ -109,13 +112,21 @@ func _on_SearchButton_pressed(_words : String = "example"):
 	set_tab_lengths()
 	
 
+
 func set_table_row(column_0 : String = "", column_1 : String = "", column_2 : String = ""):
-	display_cache += "[b]" + column_0 + "[/b]"
+	if column_0 == "":
+		pass
+	else:
+		display_cache += "[font_size=32][b][url=https://www.google.com/search?q=" + column_0 +"+def]" + column_0 + "[/url][/b][/font_size]"
+		display_cache += "  [font_size=12][url=https://jisho.org/search/" + column_0
+		display_cache += "][lb]日本語[rb][/url][/font_size]"
 	display_cache += "\t"
 	display_cache += column_1
 	display_cache += "\t"
 	display_cache += column_2
 	display_cache += "\n"
+	
+
 
 func set_tab_lengths():
 	var tab_length_string = str(Display.size.x / 3)
@@ -123,8 +134,15 @@ func set_tab_lengths():
 	
 	for entry in display_array:
 		display_temp += entry
-		display_temp += "\n[img=" + str(Display.size.x - 32) + "x1]res://Resources/line_break.tres[/img]\n\n"
+		display_temp += "[font_size=24]\n[/font_size]"
+		display_temp += "[img=" + str(Display.size.x - 32) + "x1]res://Resources/line_break.tres[/img]\n"
+		display_temp += "[font_size=4]\n[/font_size]"
 	
 	display_temp += "[/p]"
 	Display.parse_bbcode(display_temp)
+	
+
+
+func _on_display_meta_clicked(meta):
+	OS.shell_open(str(meta))
 	
