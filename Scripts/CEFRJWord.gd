@@ -3,7 +3,7 @@ extends Control
 
 var regex = RegEx.new()
 var display_cache = ""
-var display_array = [""]
+var display_array : Array[String]
 
 @onready var CEFRJWordList = get_node("/root/WordList/")
 @onready var credits = preload("res://Scenes/Credits.tscn")
@@ -13,7 +13,7 @@ var display_array = [""]
 func _ready():
 	$VBoxContainer/SearchBar/SearchInput.grab_focus()
 	Display.resized.connect(set_tab_lengths)
-	_on_SearchButton_pressed()
+	
 
 
 func _on_SearchButton_pressed(_words : String = ""):
